@@ -44,7 +44,7 @@ void FSpeechRecognitionWorker::ShutDown() {
 bool FSpeechRecognitionWorker::EnableGrammarMode(FString grammarName)
 {
 	const char* name = TCHAR_TO_ANSI(*grammarName);
-	std::string grammarFile = contentPath_str + "model/" + langStr + "/grammars/" + name + ".gram";
+	std::string grammarFile = contentPath_str + "GeneralBlueprints/Main/Characters/Components/SpeechRecognition/SpeechRecognitionRuleSet/" + langStr + "/grammars/" + name + ".gram";
 
 	// Init config and set default params
 	InitConfig();
@@ -180,11 +180,11 @@ void FSpeechRecognitionWorker::SetLanguage(ESpeechRecognitionLanguage language) 
 }
 
 void FSpeechRecognitionWorker::InitConfig() {
-	argFilePath = contentPath_str + +"model/" + langStr + "/" + langStr + ".args";
+	argFilePath = contentPath_str + +"GeneralBlueprints/Main/Characters/Components/SpeechRecognition/SpeechRecognitionRuleSet/" + langStr + "/" + langStr + ".args";
 	logPath = contentPath_str + "log/";
-	modelPath = contentPath_str + "model/" + langStr + "/" + langStr;
-	languageModel = contentPath_str + "model/" + langStr + "/" + langStr + ".lm";
-	dictionaryPath = contentPath_str + "model/" + langStr + "/" + langStr + ".dict";
+	modelPath = contentPath_str + "GeneralBlueprints/Main/Characters/Components/SpeechRecognition/SpeechRecognitionRuleSet/" + langStr + "/" + langStr;
+	languageModel = contentPath_str + "GeneralBlueprints/Main/Characters/Components/SpeechRecognition/SpeechRecognitionRuleSet/" + langStr + "/" + langStr + ".lm";
+	dictionaryPath = contentPath_str + "GeneralBlueprints/Main/Characters/Components/SpeechRecognition/SpeechRecognitionRuleSet/" + langStr + "/" + langStr + ".dict";
 
 	if (ps != NULL) {
 		cmd_ln_free_r(config);
